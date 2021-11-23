@@ -22,12 +22,15 @@ A custom event is emitted whenever the user interacts with an action element of 
 
 ```js
 emitValue(value) {
+  // Custom event emitter
   const event = new CustomEvent('change', {
     detail: {
-      value
+      value // selected value
     },
-    bubbles: true
+    bubbles: true // will continue emitting
   });
+
+  // Dispatches the event to be emitted to the parent
   this.dispatchEvent(event);
 }
 ```
