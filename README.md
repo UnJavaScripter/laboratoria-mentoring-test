@@ -20,7 +20,7 @@ Open the `index.html` file in any browser, then interact with the step selector 
 
 A custom event is emitted whenever the user interacts with an action element of the component. The emitted value matches the internally selected value of the component. 
 
-```
+```js
 emitValue(value) {
   const event = new CustomEvent('change', {
     detail: {
