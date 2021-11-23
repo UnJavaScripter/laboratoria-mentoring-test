@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo 🌶️</title>
+  <style>
+    body {
+      background-color: peru;
+      font-size: 4rem;
+      color: white;
+    }
+    main {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <section id="counter" class="counter">1</section>
+    <section class="controls">
+      <dc-step-selector
+        id="step-selector"
+        max="5"
+        value="4"
+      ></dc-step-selector>
+    </section>
+  </main>
+
+  <script src="./dc-step-selector.js"></script>
+  <script>
+    const counterElem = document.querySelector('#counter');
+    const selectorElem = document.querySelector('#step-selector');
+    
+    counterElem.innerText = selectorElem.value;
+
+    selectorElem.addEventListener('change', (event) => {
+      counterElem.innerText = event.detail.value;
+    });
+  </script>
+  
+</body>
+</html>
