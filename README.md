@@ -13,3 +13,21 @@ You can use a deployed version of the app [right here](https://unjavascripter.gi
 ## Usage
 
 Open the `index.html` file in any browser, then interact with the step selector to see the value change.
+
+## Interesting stuff
+
+### Custom event emitting
+
+A custom event is emitted whenever the user interacts with an action element of the component. The emitted value matches the internally selected value of the component. 
+
+```
+emitValue(value) {
+  const event = new CustomEvent('change', {
+    detail: {
+      value
+    },
+    bubbles: true
+  });
+  this.dispatchEvent(event);
+}
+```
