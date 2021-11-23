@@ -21,8 +21,9 @@
 <body>
 
   <main>
-    <section id="counter" class="counter">1</section>
+    <section id="counter" class="counter"></section>
     <section class="controls">
+      <!-- web component with initial values -->
       <dc-step-selector
         id="step-selector"
         max="5"
@@ -33,11 +34,14 @@
 
   <script src="./dc-step-selector.js"></script>
   <script>
+    // Create selecors
     const counterElem = document.querySelector('#counter');
     const selectorElem = document.querySelector('#step-selector');
     
+    // Set initial value
     counterElem.innerText = selectorElem.value;
 
+    // Create event listeners
     selectorElem.addEventListener('change', (event) => {
       counterElem.innerText = event.detail.value;
     });
